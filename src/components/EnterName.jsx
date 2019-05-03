@@ -17,6 +17,11 @@ const Form = styled.form`
     font-size:24px;
     visibility: ${props => props.name ? 'hidden' : 'visible' };
     background-color: ${props => UI_COLORS_DICT[props.type]};
+    @media only screen and (max-width: 900px) {
+        width:50%;
+        height:20%;
+        font-size:14px;
+    }
 `
 
 const InputBox = styled.div`
@@ -32,6 +37,11 @@ const Button = styled.button`
     padding:10px;
     font-size:14px;
     margin-left:1px;
+    @media only screen and (max-width: 900px) {
+        height: 30px;
+        width:50px;
+        font-size:12px;
+    }
 `
 
 const Input = styled.input`
@@ -42,6 +52,12 @@ const Input = styled.input`
     padding: 10px 30px;
     &:focus {
         outline:none;
+    }
+    @media only screen and (max-width: 900px) {
+        height: 20px;
+        width:30px;
+        font-size:14px;
+        padding: 5px 15px;
     }
 `
 
@@ -60,7 +76,7 @@ class EnterName extends React.Component{
             <Form type={this.props.type} name={this.props.name} onSubmit={this.handleSubmit}>
                 <span>Enter Your Name</span>
                 <InputBox>
-                    <Input onChange={this.handleChange} value={ this.state.value }/>
+                    <Input maxLength="10" onChange={this.handleChange} value={ this.state.value }/>
                     <Button type="Submit">Enter</Button>
                 </InputBox>
             </Form>

@@ -20,6 +20,12 @@ const Button = styled.button`
     &:active, &:focus {
         outline: none;
     }
+    @media only screen and (max-width: 900px) {
+        width:50px;
+        height: 40px;
+        font-size: 12px;
+        margin-top:10px;
+    }
 `
 
 const RollStyled = styled.div`
@@ -29,6 +35,13 @@ const RollStyled = styled.div`
     flex-direction:column;
     justify-content:center;
     align-items:center;
+    @media only screen and (max-width: 900px) {
+        width:80%;
+        height:50%;
+        box-sizing:border-box;
+        padding-left:5%;
+        padding-bottom: 10%;
+    }
 `
 
 const Roll = ({type, value, rollClick, doneClicked, doneClick}) => (

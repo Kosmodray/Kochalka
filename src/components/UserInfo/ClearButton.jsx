@@ -12,6 +12,9 @@ const Button = styled.button`
     background-color:white;
     width: 60px;
     padding:10px;
+    @media only screen and (max-width: 900px) {
+        margin: 0px;
+    }
 `
 
 const ClearButton = ({type, clearClick}) => (

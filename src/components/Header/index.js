@@ -17,6 +17,10 @@ align-items:center;
 justify-content:space-between;
 padding-left:50px;
 box-sizing:border-box;
+@media only screen and (max-width: 900px) {
+    height: 80px;
+    padding-left:5px;
+}
 `
 const Header = ({type}) => (
     <Head type={type}>

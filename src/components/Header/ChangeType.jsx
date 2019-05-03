@@ -20,6 +20,15 @@ const Button = styled.button`
     &:active, &:focus {
         outline: none;
     }
+    @media only screen and (max-width: 900px) {
+        margin-top: 5px;
+        padding: 0 5px 0 5px;
+        height: 20px;
+        margin-right:0px;
+        &:first-child {
+            margin-top: 1px;
+        }
+    }
 `
 
 const ButtonDiv = styled.div`
@@ -28,6 +37,9 @@ const ButtonDiv = styled.div`
     flex-direction:row;
     margin-right:50px;
     box-sizing:border-box;
+    @media only screen and (max-width: 900px) {
+        flex-direction: column;
+    }
 `
 
 const NavBar = ({changeType}) => (

@@ -15,13 +15,16 @@ const BDiv = styled.div`
     justify-content:center;
     align-items:center;
     font-size: 24px;
+    @media only screen and (max-width: 900px) {
+        font-size: 12px;
+    }
 `
 const Div = styled.div`
     display:flex;
     flex-direction:row;
     align-items:center;
     justify-content:center;
-    width:100vw;
+    width:100%;
 `
 
 

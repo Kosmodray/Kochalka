@@ -14,6 +14,12 @@ const UI = styled.div`
     font-size:14px;
     padding-top:2%;
     box-sizing:border-box;
+    @media only screen and (max-width: 900px) {
+        height: 100%;
+        width: 40%;
+        font-size:12px;
+        padding-top:5%;
+    }
 `
 const InfoHead = styled.h3`
     color: ${props => UI_COLORS_DICT[props.type]};
