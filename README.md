@@ -6,4 +6,4 @@ Kochalka
 * Redux-Actions
 * Styled-components
 
-To test: https://kosmodray.github.io/Kochalka/
+Test: https://kosmodray.github.io/Kochalka/
