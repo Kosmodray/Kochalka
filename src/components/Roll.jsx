@@ -2,8 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import {connect} from 'react-redux'
 import PropTypes from 'prop-types'
-import actions from '../../actions/actions'
-import { UI_COLORS_DICT } from '../../lib/dict'
+import actions from '../actions/actions'
+import { UI_COLORS_DICT } from '../lib/dict'
 
 const Button = styled.button`
     border: 1px solid ${props => UI_COLORS_DICT[props.type]};

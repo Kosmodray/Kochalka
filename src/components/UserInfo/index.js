@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import CB from './ClearButton/ClearButton'
+import CB from './ClearButton'
 import {connect} from 'react-redux'
 import PropTypes from 'prop-types';
 import { UI_COLORS_DICT } from '../../lib/dict'
@@ -11,7 +11,7 @@ const UI = styled.div`
     display:flex;
     flex-direction:column;
     padding:10px;
-    font-size:16px;
+    font-size:14px;
     padding-top:2%;
     box-sizing:border-box;
 `

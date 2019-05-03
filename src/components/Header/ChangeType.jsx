@@ -1,12 +1,12 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import actions from '../../../actions/actions'
+import actions from '../../actions/actions'
 import styled from 'styled-components'
 import PropTypes from 'prop-types';
-import { UI_COLORS_DICT } from '../../../lib/dict'
+import { UI_COLORS_DICT } from '../../lib/dict'
 
 const Button = styled.button`
-    font-size:16px;
+    font-size:14px;
     background-color: ${props => UI_COLORS_DICT[props.type]};
     color:white;
     border: none;

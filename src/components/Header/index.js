@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import NB from './ChangeType/NavBar'
+import NB from './ChangeType'
 import {connect} from 'react-redux'
 import PropTypes from 'prop-types'
 import { UI_COLORS_DICT } from '../../lib/dict'

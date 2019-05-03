@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import {connect} from 'react-redux'
-import actions from '../../actions/actions'
+import actions from '../actions/actions'
 import PropTypes from 'prop-types';
-import { UI_COLORS_DICT } from '../../lib/dict'
+import { UI_COLORS_DICT } from '../lib/dict'
 
 const Form = styled.form`
     display:flex;
@@ -11,25 +11,35 @@ const Form = styled.form`
     align-items:center;
     justify-content:space-around;
     position: absolute;
-    width:500px;
-    height:250px;
+    width:650px;
+    height:200px;
     color: white;
-    font-size:36px;
+    font-size:24px;
     visibility: ${props => props.name ? 'hidden' : 'visible' };
     background-color: ${props => UI_COLORS_DICT[props.type]};
+`
+
+const InputBox = styled.div`
+    display:flex;
+    flex-direction:row;
 `
 
 const Button = styled.button`
     background-color: white;
     border: none;
     font-size:30px;
+    width: 60px;
+    padding:10px;
+    font-size:14px;
+    margin-left:1px;
 `
 
 const Input = styled.input`
     width:200px;
-    height:50px;
+    height:40px;
     font-size:36px;
     border:none;
+    padding: 10px 30px;
     &:focus {
         outline:none;
     }
@@ -49,8 +59,10 @@ class EnterName extends React.Component{
         return(
             <Form type={this.props.type} name={this.props.name} onSubmit={this.handleSubmit}>
                 <span>Enter Your Name</span>
-                <Input onChange={this.handleChange} value={ this.state.value }/>
-                <Button type="Submit">Enter</Button>
+                <InputBox>
+                    <Input onChange={this.handleChange} value={ this.state.value }/>
+                    <Button type="Submit">Enter</Button>
+                </InputBox>
             </Form>
         )
     }

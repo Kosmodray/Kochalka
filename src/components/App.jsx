@@ -1,9 +1,9 @@
 import React from 'react'
-import Roll from '../Roll/'
+import Roll from './Roll'
 import styled from 'styled-components'
-import UI from '../UserInfo/UserInfo'
-import Header from '../Header/Header'
-import EN from '../EnterName/EnterName'
+import UI from './UserInfo'
+import Header from './Header'
+import EN from './EnterName'
 
 const BDiv = styled.div`
     margin:0;
