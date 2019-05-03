@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/Kochalka/static/js/main.f79636e3.chunk.js",
-    "main.js.map": "/Kochalka/static/js/main.f79636e3.chunk.js.map",
+    "main.js": "/Kochalka/static/js/main.a1c5e89c.chunk.js",
+    "main.js.map": "/Kochalka/static/js/main.a1c5e89c.chunk.js.map",
     "runtime~main.js": "/Kochalka/static/js/runtime~main.813b94c9.js",
     "runtime~main.js.map": "/Kochalka/static/js/runtime~main.813b94c9.js.map",
     "static/js/2.fe1350aa.chunk.js": "/Kochalka/static/js/2.fe1350aa.chunk.js",
     "static/js/2.fe1350aa.chunk.js.map": "/Kochalka/static/js/2.fe1350aa.chunk.js.map",
     "index.html": "/Kochalka/index.html",
-    "precache-manifest.fb70ec9a1bb5e253cd0f9dbcb4aa9170.js": "/Kochalka/precache-manifest.fb70ec9a1bb5e253cd0f9dbcb4aa9170.js",
+    "precache-manifest.ce8ed83846a2bf2fe899b9f72719f58a.js": "/Kochalka/precache-manifest.ce8ed83846a2bf2fe899b9f72719f58a.js",
     "service-worker.js": "/Kochalka/service-worker.js"
   }
 }
