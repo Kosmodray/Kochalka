@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.0/workbox-sw.js");
 
 importScripts(
-  "/Kochalka/precache-manifest.b1a4d48ec4fedc0a681ae50d56b1f935.js"
+  "/Kochalka/precache-manifest.fb70ec9a1bb5e253cd0f9dbcb4aa9170.js"
 );
 
 self.addEventListener('message', (event) => {
