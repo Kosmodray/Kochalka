@@ -6,78 +6,78 @@ if(localStorage['Sport']) {
     initialState = JSON.parse(localStorage['Sport'])
 } else {
     initialState = {
-        PushUps: {
-            Record: 0,
-            Quantity: 0
+        pushUps: {
+            record: 0,
+            quantity: 0
         },
-        SitUps: {
-            Record: 0,
-            Quantity: 0
+        sitUps: {
+            record: 0,
+            quantity: 0
         },
-        Squats: {
-            Record: 0,
-            Quantity: 0
+        squats: {
+            record: 0,
+            quantity: 0
         },
-        Name: "",
-        Value: 0,
-        Type: "Squats",
-        DoneClicked: true
+        name: "",
+        value: 0,
+        type: "squats",
+        doneClicked: true
    }
 }
 
 export default handleActions(
     {
-        'Roll': (state, action) => ({
+        'roll': (state, action) => ({
             ...state,
-            Value: action.payload,
-            DoneClicked: false
+            value: action.payload,
+            doneClicked: false
         }),
   
-        'Done': (state, action) => {
-            let type = state[state.Type]
+        'done': (state, action) => {
+            let type = state[state.type]
             let newObj = {...state}
-            newObj[state.Type] = {
+            newObj[state.type] = {
                 ...type,
-                Quantity: type.Quantity+state.Value,
-                Record: state.Value>type.Record ? state.Value : type.Record
+                quantity: type.quantity+state.value,
+                record: state.value>type.record ? state.value : type.record
             }
-            newObj['DoneClicked'] = true
-            newObj['Value'] = 0
+            newObj['doneClicked'] = true
+            newObj['value'] = 0
             localStorage['Sport'] = JSON.stringify(newObj)
             return newObj
         },
 
-        'Clear': (state, action) => {
+        'clear': (state, action) => {
             delete localStorage['Sport']
 
             return {
                 ...state,
-                PushUps: {
-                    Quantity: 0,
-                    Record: 0
+                pushUps: {
+                    quantity: 0,
+                    record: 0
                 },
-                SitUps: {
-                    Quantity: 0,
-                    Record: 0
+                sitUps: {
+                    quantity: 0,
+                    record: 0
                 },
-                Squats: {
-                    Quantity: 0,
-                    Record: 0
+                squats: {
+                    quantity: 0,
+                    record: 0
                 },
-                Value: 0,
-                Name: ""
+                value: 0,
+                name: ""
             }
         },
-        'SetName': (state, action) => ({
+        'setName': (state, action) => ({
                 ...state,
-                Name: action.payload
+                name: action.payload
         }),
         
-        'ChangeType': (state, action) => ({
+        'changeType': (state, action) => ({
             ...state,
-            Type: action.payload,
-            Value: 0,
-            DoneClicked: true
+            type: action.payload,
+            value: 0,
+            doneClicked: true
         })
     },
     initialState

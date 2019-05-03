@@ -1,41 +1,33 @@
 import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
-import Actions from '../../../actions/actions'
+import actions from '../../../actions/actions'
 import {connect} from 'react-redux'
+import { UI_COLORS_DICT } from '../../../lib/dict'
 
 const Button = styled.button`
-    border: 1px solid ${props => {
-        switch(props.Type){
-            case 'PushUps':
-                return 'rgb(66, 176, 244)'
-            case 'SitUps':
-                return 'rgb(101, 244, 66)'
-            case 'Squats':
-                return 'rgb(214, 167, 0)'
-            default:
-                return 'black'
-        }}
-    };
-    font-size:36px;
+    border: 1px solid ${props => UI_COLORS_DICT[props.type]};
+    font-size:16px;
     margin:50px;
     background-color:white;
+    width: 60px;
+    padding:10px;
 `
 
-const ClearButton = ({Type, ClearClick}) => (
-    <Button Type={Type} onClick={() => ClearClick()}>Clear</Button>
+const ClearButton = ({type, clearClick}) => (
+    <Button type={type} onClick={() => clearClick()}>Clear</Button>
 )
 
 ClearButton.propTypes = {
-    Type: PropTypes.string,
-    ClearClick: PropTypes.func.isRequired
+    type: PropTypes.string,
+    clearClick: PropTypes.func.isRequired
 }
 
 export default connect(
     state => ({
-        Type: state.Type
+        type: state.type
     }),
     {
-        ClearClick: Actions.Clear
+        clearClick: actions.clear
     }
 )(ClearButton)

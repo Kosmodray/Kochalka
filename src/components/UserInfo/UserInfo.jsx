@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import CB from './ClearButton/ClearButton'
 import {connect} from 'react-redux'
 import PropTypes from 'prop-types';
+import { UI_COLORS_DICT } from '../../lib/dict'
 
 const UI = styled.div`
     height:90vh;
@@ -10,67 +11,46 @@ const UI = styled.div`
     display:flex;
     flex-direction:column;
     padding:10px;
-    font-size:24px;
-    border: ${props => {
-        switch(props.type){
-            case 'PushUps':
-                return '1px solid rgb(66, 176, 244)'
-            case 'SitUps':
-                return '1px solid rgb(101, 244, 66)'
-            case 'Squats':
-                return '1px solid rgb(214, 167, 0)'
-            default:
-                return '1px solid black'
-        }
-    }};
+    font-size:16px;
+    padding-top:2%;
+    box-sizing:border-box;
 `
 const InfoHead = styled.h3`
-    color: ${props => {
-        switch(props.type){
-            case 'PushUps':
-                return 'rgb(66, 176, 244)'
-            case 'SitUps':
-                return 'rgb(101, 244, 66)'
-            case 'Squats':
-                return 'rgb(214, 167, 0)'
-            default:
-                return 'black'
-        }
-    }};
+    color: ${props => UI_COLORS_DICT[props.type]};
     margin-bottom: 0px;
 `
 
 
-const UserInfo = ({PushUps, SitUps, Squats, ClearClick, Name, Type}) => (
-    <UI type={Type}>
-        <span>Name: {Name}</span>
-        <InfoHead type='PushUps'>PushUps</InfoHead>
-            <span>Push Ups quantity: {PushUps.Quantity} </span>
-            <span>Record: {PushUps.Record} </span>
-        <InfoHead type='SitUps'>SitUps</InfoHead>
-            <span>Sit Ups quantity: {SitUps.Quantity} </span>
-            <span>Record: {SitUps.Record} </span>
-        <InfoHead type='Squats'>Squats</InfoHead>
-            <span>Squats quantity: {Squats.Quantity} </span>
-            <span>Record: {Squats.Record} </span>
+const UserInfo = ({pushUps, sitUps, squats, name, type}) => (
+    <UI type={type}>
+        <span>Name: {name}</span>
+        <InfoHead type='pushUps'>PushUps</InfoHead>
+            <span>Quantity: {pushUps.quantity} </span>
+            <span>Record: {pushUps.record} </span>
+        <InfoHead type='sitUps'>SitUps</InfoHead>
+            <span>Quantity: {sitUps.quantity} </span>
+            <span>Record: {sitUps.record} </span>
+        <InfoHead type='squats'>Squats</InfoHead>
+            <span>Quantity: {squats.quantity} </span>
+            <span>Record: {squats.record} </span>
         <CB/>
     </UI>
 )
 
 UserInfo.propTypes = {
-    PushUps: PropTypes.object,
-    SitUps: PropTypes.object,
-    Squats: PropTypes.object,
-    Name: PropTypes.string,
-    Type: PropTypes.string
+    pushUps: PropTypes.object,
+    sitUps: PropTypes.object,
+    squats: PropTypes.object,
+    name: PropTypes.string,
+    type: PropTypes.string
 }
 
 export default connect(
     state => ({
-        PushUps: state["PushUps"],
-        SitUps: state["SitUps"],
-        Squats: state["Squats"],
-        Name: state.Name,
-        Type: state.Type
+        pushUps: state["pushUps"],
+        sitUps: state["sitUps"],
+        squats: state["squats"],
+        name: state.name,
+        type: state.type
     })
 )(UserInfo)

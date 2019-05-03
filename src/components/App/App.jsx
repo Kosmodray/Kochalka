@@ -1,5 +1,5 @@
 import React from 'react'
-import RD from '../Roll/RollDiv/RollDiv'
+import Roll from '../Roll/'
 import styled from 'styled-components'
 import UI from '../UserInfo/UserInfo'
 import Header from '../Header/Header'
@@ -8,13 +8,13 @@ import EN from '../EnterName/EnterName'
 const BDiv = styled.div`
     margin:0;
     padding:0;
-    width:100vw;
-    height:100vh;
+    width:100%;
+    height:100%;
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    font-size: 36px;
+    font-size: 24px;
 `
 const Div = styled.div`
     display:flex;
@@ -30,7 +30,7 @@ const App = () => (
         <EN/>
         <Header/>
         <Div>
-            <RD/>
+            <Roll/>
             <UI/>
         </Div>
     </BDiv>

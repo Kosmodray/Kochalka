@@ -2,7 +2,7 @@
   "name": "kochalka",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://kosmodray.github.io/kochalka",
+  "homepage": "http://kosmodray.github.io/Kochalka",
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",

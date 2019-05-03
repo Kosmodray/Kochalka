@@ -1,8 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import {connect} from 'react-redux'
-import Actions from '../../actions/actions'
+import actions from '../../actions/actions'
 import PropTypes from 'prop-types';
+import { UI_COLORS_DICT } from '../../lib/dict'
 
 const Form = styled.form`
     display:flex;
@@ -12,35 +13,26 @@ const Form = styled.form`
     position: absolute;
     width:500px;
     height:250px;
-    background-color:rgb(66, 176, 244);
-    border: 1px solid black;
     color: white;
-    font-size:54px;
-    visibility: ${props => props.Name ? 'hidden' : 'visible' };
-    background-color: ${props => {
-        switch(props.Type){
-            case 'PushUps':
-                return 'rgb(66, 176, 244)'
-            case 'SitUps':
-                return 'rgb(101, 244, 66)'
-            case 'Squats':
-                return 'rgb(214, 167, 0)'
-            default:
-                return 'black'
-        }}
-    };
+    font-size:36px;
+    visibility: ${props => props.name ? 'hidden' : 'visible' };
+    background-color: ${props => UI_COLORS_DICT[props.type]};
 `
 
 const Button = styled.button`
     background-color: white;
-    border: 1px solid black;
-    font-size:36px;
+    border: none;
+    font-size:30px;
 `
 
 const Input = styled.input`
-    width:250px;
+    width:200px;
     height:50px;
-    font-size:54px;
+    font-size:36px;
+    border:none;
+    &:focus {
+        outline:none;
+    }
 `
 
 class EnterName extends React.Component{
@@ -48,14 +40,14 @@ class EnterName extends React.Component{
     handleChange = (e) => { this.setState({value:e.target.value}) }
 
     handleSubmit = (e) => {
-        this.props.SetName(this.state.value.trim());
+        this.props.setName(this.state.value.trim());
         this.setState({value:""});
         e.preventDefault();
     }
 
     render() {
         return(
-            <Form Type={this.props.Type} Name={this.props.Name} onSubmit={this.handleSubmit}>
+            <Form type={this.props.type} name={this.props.name} onSubmit={this.handleSubmit}>
                 <span>Enter Your Name</span>
                 <Input onChange={this.handleChange} value={ this.state.value }/>
                 <Button type="Submit">Enter</Button>
@@ -65,17 +57,17 @@ class EnterName extends React.Component{
 }
 
 EnterName.propTypes = {
-    Name: PropTypes.string,
-    Type: PropTypes.string,
-    SetName: PropTypes.func.isRequired
+    name: PropTypes.string,
+    type: PropTypes.string,
+    setName: PropTypes.func.isRequired
 }
 
 export default connect(
     state => ({
-        Name: state.Name,
-        Type: state.Type
+        name: state.name,
+        type: state.type
     }),
     {
-        SetName: Actions.SetName
+        setName: actions.setName
     }
 ) (EnterName)

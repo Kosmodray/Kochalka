@@ -1,15 +1,15 @@
 import { createAction } from 'redux-actions'
 
-const Roll = createAction('Roll', () => Math.floor(Math.random()*100))
-const Done = createAction('Done')
-const Clear = createAction('Clear')
-const SetName = createAction('SetName')
-const ChangeType = createAction('ChangeType')
+const roll = createAction('roll', () => Math.floor(Math.random()*100))
+const done = createAction('done')
+const clear = createAction('clear')
+const setName = createAction('setName')
+const changeType = createAction('changeType')
 
 export default {
-    Roll,
-    Done,
-    Clear,
-    SetName,
-    ChangeType
+    roll,
+    done,
+    clear,
+    setName,
+    changeType
 }
