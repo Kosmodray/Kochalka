@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
 import {connect} from 'react-redux'
 import actions from '../actions/actions'
@@ -61,27 +61,26 @@ const Input = styled.input`
     }
 `
 
-class EnterName extends React.Component{
-    state = { value:"" }
-    handleChange = (e) => { this.setState({value:e.target.value}) }
+const EnterName = ({name, type, setName}) => {
+    const [text, setText] = useState("");
 
-    handleSubmit = (e) => {
-        this.props.setName(this.state.value.trim());
-        this.setState({value:""});
-        e.preventDefault();
+    const handleSubmit = (e) => {
+        setName(text.trim())
+        setText("")
+        e.preventDefault()
     }
 
-    render() {
-        return(
-            <Form type={this.props.type} name={this.props.name} onSubmit={this.handleSubmit}>
-                <span>Enter Your Name</span>
-                <InputBox>
-                    <Input maxLength="10" onChange={this.handleChange} value={ this.state.value }/>
-                    <Button type="Submit">Enter</Button>
-                </InputBox>
-            </Form>
-        )
-    }
+    const handleChange = (e) => setText(e.target.value)
+
+    return (
+        <Form type={type} name={name} onSubmit={handleSubmit}>
+            <span>Enter Your Name</span>
+            <InputBox>
+            <Input maxLength="10" onChange={handleChange} value={text}/>
+                <Button type="Submit">Enter</Button>
+            </InputBox>
+        </Form>
+    )
 }
 
 EnterName.propTypes = {

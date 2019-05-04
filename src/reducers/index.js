@@ -20,7 +20,7 @@ if(localStorage['Sport']) {
         },
         name: "",
         value: 0,
-        type: "squats",
+        type: "pushUps",
         doneClicked: true
    }
 }
