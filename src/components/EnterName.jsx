@@ -70,7 +70,7 @@ const EnterName = ({name, type, setName}) => {
         e.preventDefault()
     }
 
-    const handleChange = (e) => setText(e.target.value)
+    const handleChange = ({target}) => setText(target.value)
 
     return (
         <Form type={type} name={name} onSubmit={handleSubmit}>
