@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "846779ac495ca626c683467dc42ff3ca",
+    "revision": "7dd346012ff2a666b9158a31a71b756b",
     "url": "/Kochalka/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Kochalka/static/js/2.5c3f6c17.chunk.js"
   },
   {
-    "revision": "123646d0a01bbf5db949",
-    "url": "/Kochalka/static/js/main.0467d450.chunk.js"
+    "revision": "d71747c1af027d0c9d9f",
+    "url": "/Kochalka/static/js/main.1ef0532e.chunk.js"
   },
   {
     "revision": "4298136515ebd0790b65",
